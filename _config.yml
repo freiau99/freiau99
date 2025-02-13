@@ -19,15 +19,4 @@ navbar:
           href: archiv-2020.html
     - text: "MHS"
       href: MHS.html
-
-output:
-  html_document:
-    highlight: textmate
-    toc: true
-    toc_float: true
-    toc_collapsed: false
-    toc_depth: 3
-    css: style1.css
-    includes: 
-        in_header: Icon.html
           
