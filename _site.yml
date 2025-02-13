@@ -1,0 +1,54 @@
+name: "Freiau99"
+navbar:
+  title: "Freiau99"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Archiv"
+      menu:
+        - text: "2024"
+          href: archiv-2024.html
+        - text: "2023"
+          href: archiv-2023.html
+        - text: "2022"
+          href: archiv-2022.html
+        - text: "2021"
+          href: archiv-2021.html
+        - text: "2020"
+          href: archiv-2020.html
+    - text: "MHS"
+      href: MHS.html
+    - text: "Direktkredite"
+      menu:
+        - text: "Wie finanzieren wir uns?"
+          href: Wie-finanzieren-wir-uns-.html
+        - text: "Was sind Direktkredite?"
+          href: Was-sind-Direktkredite-.html
+        - text: "Kreditverträge"
+          href: Kreditvertraege.html
+        - text: "Wie viel Sicherheit gibt es?"
+          href: Wie-viel-Sicherheit-gibt-es-.html
+        - text: "Zinsmethode"
+          href: Zinsmethode.html
+    - text: "Kontakt"
+      href: Kontakt.html
+  right: 
+    - text: "Impressum & Datenschutz"
+      menu:
+        - text: "Impressum"
+          href: Impressum.html
+        - text: "Datenschutzerklärung"
+          href: Datenschutz.html
+
+output:
+  html_document:
+    highlight: textmate
+    toc: true
+    toc_float: true
+    toc_collapsed: false
+    toc_depth: 3
+    css: style1.css
+    includes: 
+        in_header: Icon.html
+    
+    

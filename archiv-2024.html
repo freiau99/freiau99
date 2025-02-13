@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>archiv-2024.knit</title>
+
+<script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+  <link rel="icon" type="image/png" href="F99.svg"/>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style1.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Freiau99</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Archiv
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="archiv-2024.html">2024</a>
+    </li>
+    <li>
+      <a href="archiv-2023.html">2023</a>
+    </li>
+    <li>
+      <a href="archiv-2022.html">2022</a>
+    </li>
+    <li>
+      <a href="archiv-2021.html">2021</a>
+    </li>
+    <li>
+      <a href="archiv-2020.html">2020</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="MHS.html">MHS</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Direktkredite
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Wie-finanzieren-wir-uns-.html">Wie finanzieren wir uns?</a>
+    </li>
+    <li>
+      <a href="Was-sind-Direktkredite-.html">Was sind Direktkredite?</a>
+    </li>
+    <li>
+      <a href="Kreditvertraege.html">Kreditverträge</a>
+    </li>
+    <li>
+      <a href="Wie-viel-Sicherheit-gibt-es-.html">Wie viel Sicherheit gibt es?</a>
+    </li>
+    <li>
+      <a href="Zinsmethode.html">Zinsmethode</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Kontakt.html">Kontakt</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Impressum &amp; Datenschutz
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Impressum.html">Impressum</a>
+    </li>
+    <li>
+      <a href="Datenschutz.html">Datenschutzerklärung</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<h2 {style="color:#FCF45D"}>
+
+Newsletter des Jahres 2024
+
+</h2>
+<div style="text-align: center">
+<p>Klickt auf die jeweilige Überschrift, um den Text auszuklappen.</p>
+</div>
+<p></br></p>
+<details>
+<summary>
+<h3 {style="color:#FCF45D"}>
+
+September 2024
+
+</h3>
+</summary>
+<div>
+<p>Liebe Lesende,</p>
+<p>Wir schreiben den Monat September. Das Wetter verwirrt unsere Gemüter mit Unbeständigkeit ohnegleichen, lässt erstmals erinnern, was dieser sog. Herbst nochmal war. Die Sonne allgemein etwas goldener, die Regentage allgemein einen Tick düsterer. Erstmals wieder eingekuschelte, eng zusammengeraffte Ansammlungen in den Küchen dieser Stockwerke.<br />
+Im Dampf des Tees reiten unsere Gedanken zurück in die letzten Monate:</p>
+<p><em>Handwerkungen</em></p>
+<p>Unser Haus hat kleinere und größere Schliffe und Upgrades erhalten.<br />
+Auch wir sind in den letzten Monaten die Modernisierungsleiter der Haushaltsgeräte eine Sprosse weiter emporgeklettert. Wo lange Zeit das akribische Tellerwaschen zum routinierten Alltagsleben der Küche im EG gehörte, kann sich diese nun auch zu den stolzen Besitzenden einer vollautomatischen Spülmaschine zählen.<br />
+Was nun endlich auch wieder in neuem Glanz strahlen darf, allerdings noch durch eigene Handarbeit betrieben, sind die Menschen des Erdgeschosses selbst. Nachdem unsere Dusche eines unbedeutenden Tages etwas überambitioniert die Couch im Keller mitduschen wollte, standen wir doch einer größeren Herausforderung entgegen. Was anfangs in Eigeninitiative begonnen wurde, fand nun vor einiger Zeit seine professionelle Fertigstellung durch handwerkende Hände und glänzt nun wieder Badreiniger-Werbungs-gleich.</p>
+</div>
+<div class="sekundaerbacki">
+<p></br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<figure>
+<img src="Flyer-240420.jpg" alt="Flyer"/>
+<figcaption class="caption">
+Der Flyer zu unserem Jubiläum!
+</figcaption>
+</figure>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<p><em>Kulturelle Events</em><br />
+Alles wie gehabt es sich bei der routinierten Organisation kultureller Veranstaltungen und Zusammenkünfte. Besuch erhielten wir beispielsweise von befreundeten Menschen aus Duisburg die mit Rap und Hiphopbeats den betonierten Boden des Kellers vibrierten ließen. Außerdem zelebrierten wir das 4 jährige Freiaujubiläum ausgiebig mit Flohmarkt, Küfa (Küche für Alle) und anschließendem Barvergnügen.</p>
+</div>
+</div>
+<p></br></p>
+</div>
+<div>
+<p>Aber nicht nur Beats sollen unseren Keller füllen. Wir haben ein Scheiß-Erlebnis einer befreundeten Person zum Anlass genommen, in einer Austauschrunde über sexuelle Übergriffigkeit in den “eignen Reihen” - der linken Szene - zu sprechen. Nach gemeinsamem Grillen und einander vertraut machen haben wir den Raum geöffnet, eigene Erfahrungen, Emotionen, Gefühle, Gedanken und mögliche Umgangsformen miteinander zu teilen. Die Runde war groß und umso schöner war es, dass Barrieren aus Scharm und Schüchternheit angetastet werden und reger Austausch zustande kommen konnte über ein Thema, welches durch Stillschweigen nicht seine Präsenz verliert.</p>
+<p><em>Eigenes Obst &amp; Gemüse</em><br />
+Äpfel unseres Baumes fielen dieses Jahr wie Sterne vom Himmel. Das Betreten des Gartens ohne Helm verlief auf eigene Gefahr. Apfelmus und Applecrumble konnte fließen wie Milch und Honig. Und auch ansonsten wurde dieses Jahr am gärtnerischen Geschick getüftelt wie lange nicht mehr. Die Tomaten wucherten über sich selbst hinaus, warfen rote Früchte ab, als gäb’s kein Morgen mehr. Zucchini, Bohnen und Kapuzinerkresse, Rhabarber und Paprika freuten sich der Symphonie des Wachsen-und-Gedeihens.</p>
+<p><em>Ansonsten:</em><br />
+Noch zu erwähnen: Elias und Luka schwärmen für ein halbes Jahr aus. Sie nutzen beide die Möglichkeit des Erasmus, Elias in Ljubljana und Luka in Istanbul. Bewohnt werden die Zimmer in der Zeit von Tobi und Macel. Herzlich willkommen! So, genug der Rekapitulationen. Tee kalt, dampf weg und das wars erstmal mit dem kleinen Update von uns.<br />
+Bei Fragen oder Anregungen meldet euch gern!</p>
+<p>Liebe Grüße und eine schöne Herbstzeit euch!<br />
+Eure Freiau99 :-)</p>
+</div>
+</details>
+<p></br></p>
+<details>
+<summary>
+<h3 {style="color:#FCF45D"}>
+
+März 2024
+
+</h3>
+</summary>
+<p>Liebe Lesende,</p>
+<p>Es ist ein neues Jahr. Dieses ist mittlerweile zwar schon etwas länger, jedoch blieb ein angemessener Umgang mit der Jahreswende bisher aus. Jedoch eignet sich auch für uns, wie für die ganzen Podcasts, Zeitschriften und sonstigen Kanäle, dieser Anlass fantastisch als reflexives Instrumentarium für eine nostalgisch ausschweifende Rekapitulation. Hier ein kleines transparentes Update und Rückblick aus dem Alltagsgeschehen der Freiau99 im noch fast frischen, jetzt schon viel zu bewegenden Jahr 2024. Lehnt Euch zurück, legt die Füße hoch und rutscht Euch in gemütliche Pose zurecht.<br />
+Das Leben hier im Haus manchmal emsig, gleich einem Bienenstock, jede:R die Füße in der eignen Alltagssuppe, aber dennoch verbunden durch gemeinsame Ziele und Projekte im Haus. Mal in kleineren Gruppen mal als Ganzes. In dynamischer Weise werden so im Haus vielerlei kurz- oder längerfristige Projekte realisiert, ploppen hier und mal da auf, dass man selbst den Überblick über das große Ganze verlieren kann und überrascht hineinschlittert. Im Folgenden werden nun mal ein paar umrissen:</p>
+<p><em>Weihnachtsessen</em><br />
+Bei den fröhlich steigenden Temperaturen draußen kaum noch vorstellbar, allerdings hat es auch in unseren Küchen mal nach Rotkohl mit Nelken, Knödel und Pilzrahmsauce geduftet. In Töpfen von gigantischem Ausmaß schmorten Leckereien vor sich hin, als hätten sie sich zum Vorbild das Märchen des süßen Breis der Gebrüder Grimm genommen. In einer großen Runde zelebrierten wir gemeinsam zwar wohl eher, dass wir gemeinsam waren, als die Geburt Jesu, nahmen die Weihnachtszeit jedoch trotzdem dafür zum Anlass.</p>
+<div class="sekundaerbacki">
+<p></br></p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><em>Elektrifizierung des Kellers</em><br />
+Dieses Projekt hat gleich zwei Vorzüge der Systematik des Mietshäussyndikats aufgedeckt: 1.: Wer selbstverwaltet, kann viel lernen. Das checken wir immer wieder. Und 2.: Ein breites Netzwerk kann sich gegenseitig stützen und nähren. Besonders deutlich hat sich das im Jahr 2023 an dem Einsteiger:Innen Workshop in Sachen Elektronik und Steckdosenkunde gezeigt. Gemeinsam mit Fachkundigen eines befreunden Hausprojekts haben wir eigenständig unseren Keller nicht nur mit packenden tanzkulturellen Veranstaltungen elektrisiert, sondern auch durch die Verlegung neuer Steckdosen und Lampen.</p>
+<p><em>Ein neues Patenprojekt – Die Fruchtschranne</em> Apropos Vernetzung, wir dürfen mit Freude verkünden, dass wir nun über ein Patenprojekt, die „Fruchtschranne" in Tübingen verfügen, mit welchem wir nun einander untergehakt in eine eng verbundene Zukunft spazieren können.</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:35%;">
+<figure>
+<img src="keller-elektrisch.jpeg"/>
+<figcaption class="caption">
+Unser Freund, der am Sicherungskasten werkelt :-)
+</figcaption>
+</figure>
+</div>
+</div>
+<p></br></p>
+</div>
+<p><em>Kneipenabende und der Solitopf</em><br />
+Neulich mal wieder einen Blick in unsere Vereinssatzung geworfen. Über mehrere Paragrafen wird hier Aufbau, Organisation und Zweck unseres Hausvereins Freiau99 e.V. genauer definiert. In §2 Vereinszweck heißt es hier:</p>
+<p>„<strong>Zweck des Vereins ist die Förderung von Initiativen zur Verbesserung der Wohn- und Lebensbedingungen in Freiburg sowie der politischen Bildung, Kultur, Kommunikation und des nachbarschaftlichen Miteinanders.</strong>"</p>
+<p>Ganz im diesem Sinne haben wir begonnen, unseren Keller für gemeinsames und nachbarschaftliches Zusammenkommen einmal monatlich im Rahmen von geselligen Kneipenabenden zu öffnen. Diese können thematisch variieren, mit unterschiedlichen Kontexten gefärbt werden, wobei Spenden dabei an Projekte wie beispielsweise den SOLITOPF weitergeleitet werden. Falls ihr Lust habt, bei einem dieser vorbeizuschauen oder mehr über den SOLITOPF wissen wollt, schreibt uns einfach gerne :-)</p>
+<hr />
+<p><em>Kurz zum Solitopf:</em> <em>Der SOLITOPF ist ein Umverteilungsprojekt in Freiburg. Menschen die einfacher an Geld kommen, geben etwas davon an Menschen weiter, für die das sehr viel schwieriger ist, weil sie keine Möglichkeit haben, für Lohn zu arbeiten. Er ist aus dem Rasthauskontext entstanden und unterstützt Menschen mit Fluchterfahrung.</em> <em>Er lebt von einmaligen oder monatlichen Einzahlungen von Einzelpersonen, die zu 100% an die betroffenen Personen ausgeschüttet werden. Das Geld wird zum Beispiel für die Beteiligung an Mietkosten oder Verfahrens- und Gerichtskosten verwendet. Diese und andere Alltagskosten entstehen oftmals durch Kriminalisierung und Illegalisierung von Einwanderung. (Mehr zum Solitopf: <a href="https://rdl.de/beitrag/solitopf" class="uri">https://rdl.de/beitrag/solitopf</a>)</em></p>
+<hr />
+<p><em>Skatevideoabende</em><br />
+Für die Skateboardszene wurde auch der Keller zur Verfügung gestellt. An zwei Abenden kam es hier zu einem Mehrgenerationen-Treff bei dem einige der alten Hasen der Freiburger Skateszene historische Quellen präsentieren konnten. Das “warten bis Gott kommt” Video aus dem Jahre 2001, das „Deadline" aus dem Jahre 2003 sowie das “FlickFlock” Video mit Akteuren aus Freiburg und Umgebung, gab der jüngeren Skategeneration einen Einblick in die Geschehnisse der damaligen Zeit. Im Anschluss gab es bei dem ein oder anderen Bier die Möglichkeit für „Oldies" und „Yung-Guns" sich über die damalige und heutige Zeit auszutauschen.</br></br></p>
+<p><em>Binnenverträge</em><br />
+Bereits ein wenig gespoilert, haben wir uns auch erneut mit der hausinternen Projektausrichtung befasst. Langfristig ausgerichtetes Zusammenleben will gepflegt werden, wie Rasenpapa Frans unseren Garten. Gerade in einem Projekt, welches sich nicht auf rein materielles Wohnen beschränkt, sondern den Raum als Ressource für das Wachsen gesellschaftlicher Projekte und Initiativen begreift, gilt es, das Verständnis der Hausmitglieder über die Vorstellung, Ausrichtung und das Wesen des Projektes immer mal wieder transparent zu machen, genauer zu definieren, aufeinander abzustimmen und zu überarbeiten. Wer sich über das Selbstverständnisses des Verbundes im Klaren ist, kann erst die vereinte Power und damit einhergehenden Kapazitäten voll ausschöpfen. Wir haben deswegen einen länger angedachten Prozess über die Ausarbeitung von projektzentrierten Binnenverträgen begonnen, um uns mit Fragen zu beschäftigen wie: welche Vorstellungen/Erwartungen haben wir von unserem Projekt, was brauchen wir persönlich von diesem und wo sehen wir seine gesellschaftliche Rolle?<br />
+</br></p>
+<div class="sekundaerbacki">
+<p></br></p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<figure>
+<img src="240216_Flyer_einfach.png"/>
+<figcaption class="caption">
+Hier seht Ihr den Flyer der Infoveranstaltung
+</figcaption>
+</figure>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:40%;">
+<p><em>Infoveranstaltung</em></p>
+<p>Wie es sich auch nicht anders gehört, und vielleicht an der ein oder anderen Stelle dieses Newsletters vielleicht durchgeklungen ist, sind wir überzeugte Fans des Konzeptes des Mietshäuser-Syndikats. Deswegen haben wir es uns in kürzester Vergangenheit herausgenommen, Werbung in eigener Sache im Rahmen einer öffentlichen Informationsveranstaltung zu machen. „Mietshäusersyndikat – was ist das überhaupt?" wurde dabei zentral aufgerollt und anhand von konkreten Projektvorstellungen nähergebracht.</p>
+</div>
+</div>
+<p></br></p>
+</div>
+<p><em>Direktkredite</em><br />
+Nun zu einer etwas seriösen Geschichte und nochmals Werbung in sehr eigener Sache: Auch die Freiau99 sucht dauerhaft nach neuen Direktkrediten, um alte Direktkredite problemlos wieder abbezahlen zu können. Aktuell ist bei uns finanziell noch alles in bester Lage und um dies weiterhin so beizubehalten, benötigen wir neue Direktkredite. Leitet diese Info gerne an mögliche Interessenten weiter, diese können sich dann an “<a href="mailto:info-freiau99@riseup.net" class="email">info-freiau99@riseup.net</a>” wenden, um dann von unseren Liebsten, Magda und Daniel, beraten und informiert zu werden.</p>
+<p><em>Und sonst so?</em><br />
+Außerdem haben wir uns überlegt, den Newsletter als Möglichkeit zu nutzen, immer mal wieder kleine Einblicke in das Leben einzelner Hausmitglieder zu geben.</p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>November letzten Jahres hat Magdalena ein spannendes Projekt in der UB Freiburg ausgestellt: „Klassismus sichtbar machen. Eine soziologische Fotoreihe der feinen Unterschiede“. Um jede*n zum reflektieren über „die feinen Unterschiede” verschiedener sozialer Herkunften anzuregen, hat sie eine Fotoreihe ausgestellt, diese hatte Folgendes als zentralen Inhalt:<br />
+„Sozialschmarotzer, Assi-TV, in der sozialen Hängematte chillen, die wollen ja eh nicht arbeiten – Diskriminierungen aufgrund der sozialen Herkunft oder sozialen Position erfahren täglich Millionen von Menschen in Bereichen der Bildung, des Wohnens, der Arbeit, der Gesundheit und im gesellschaftlichen Miteinander. Und trotzdem ist das Wissen über Klassismus noch peripher. Um dies zu ändern, hat die Soziologiestudentin Magdalena Bausch Häuser, Wohnzimmer und die Bewohnenden fotografiert."</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:40%;">
+<figure>
+<img src="wir-bei-magdas-ausstellung.jpeg"/>
+<figcaption class="caption">
+Wie Lukas Mom begeistert bemerkt, waren wir auch bei Magdas Ausstellung zu finden :-)
+</figcaption>
+</figure>
+</div>
+</div>
+<div>
+<p>Wer diese spannende Ausstellung nochmal besichtigen möchte hat die Möglichkeit dazu hier: Basel bis 14. Mai im Petersgraben 27. <a href="https://soziologie.philhist.unibas.ch/de/aktuelles/veranstaltungen/details/klassismus-sichtbar-machen/" class="uri">https://soziologie.philhist.unibas.ch/de/aktuelles/veranstaltungen/details/klassismus-sichtbar-machen/</a>. Oder in der Besprechung bei Soziopolis zu lesen: <a href="https://www.soziopolis.de/die-unterschiede-in-den-couchecken.html" class="uri">https://www.soziopolis.de/die-unterschiede-in-den-couchecken.html</a>; Basel. </br></br> Liebe Grüße, </br> Die Freiau99 :-)</p>
+</div>
+</details>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

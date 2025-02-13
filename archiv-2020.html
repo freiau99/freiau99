@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>archiv-2020.knit</title>
+
+<script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+  <link rel="icon" type="image/png" href="F99.svg"/>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style1.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Freiau99</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Archiv
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="archiv-2024.html">2024</a>
+    </li>
+    <li>
+      <a href="archiv-2023.html">2023</a>
+    </li>
+    <li>
+      <a href="archiv-2022.html">2022</a>
+    </li>
+    <li>
+      <a href="archiv-2021.html">2021</a>
+    </li>
+    <li>
+      <a href="archiv-2020.html">2020</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="MHS.html">MHS</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Direktkredite
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Wie-finanzieren-wir-uns-.html">Wie finanzieren wir uns?</a>
+    </li>
+    <li>
+      <a href="Was-sind-Direktkredite-.html">Was sind Direktkredite?</a>
+    </li>
+    <li>
+      <a href="Kreditvertraege.html">Kreditverträge</a>
+    </li>
+    <li>
+      <a href="Wie-viel-Sicherheit-gibt-es-.html">Wie viel Sicherheit gibt es?</a>
+    </li>
+    <li>
+      <a href="Zinsmethode.html">Zinsmethode</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Kontakt.html">Kontakt</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Impressum &amp; Datenschutz
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Impressum.html">Impressum</a>
+    </li>
+    <li>
+      <a href="Datenschutz.html">Datenschutzerklärung</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<h2 {style="color:#FCF45D"}>
+
+Newsletter des Jahres 2020
+
+</h2>
+<p></br></p>
+<details>
+<summary>
+<h3 {style="color:#FCF45D"}>
+
+Weihnachten 2020
+
+</h3>
+</summary>
+<div>
+<p>Liebe alle,</p>
+<p>nach einer kleinen Funkstille finden wir es angebracht, mal wieder von uns hören zu lassen.</p>
+<p>Wir hatten eigentlich gedacht, dieses Jahr von einem sensationellen Fest zum gelungenen Hauskauf, von unserem sensationellen WG-Leben und von sensationellen Ausstellungen, interessanten Vorträgen und Partys in unserem Keller berichten zu können.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Doch die letzte Zeit verlief eher sensationell ruhig und unsere sozialen Kontakte sind auf ein Minimum reduziert, 1.5 Meter entfernt und oft maskiert.</p>
+<p>Nun ja. Jammern, wie es hätte sein können, ist ja bekanntlich nicht das Rezept zum Glück. Und ich glaube, wir haben es auch jetzt im 2. Lockdown geschafft, eine recht gemütliche Zeit in der Freiau99 zu verbringen. So hat beispielsweise die Ausgangssperre ab 20 Uhr, die in Baden-Württemberg derzeit gilt, dazu geführt, dass wir als WG schöne gemeinsame Koch-Abende verbracht haben. Außerdem vergeht kaum ein Abend, an dem nicht die ein oder andere Schach-Partie in unserer Küche ausgetragen wird.</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<figure>
+<img src="Schach.jpeg">
+<figcaption class="caption">
+Hier liefern sich Finja und Lui - die Neuen - ein heißes Match.
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Neben der Anpassung an die Pandemie gibt es aber auch andere Veränderungen in unserem Haus. So heißen wir zwei neue Mitbewohnerinnen willkommen, die im Herbst/Winter eingezogen sind: Finja und Lui, beim Schachspielen auf Foto im Anhang. Die beiden ersetzen Steffi und Ines, die nun zwar nicht mehr in der Freiau99 wohnen, dem Haus weiterhin als Vereinsmitglieder und Freundinnen erhalten bleiben.</p>
+<p>Finja hat uns als erste Amtshandlung beim „Aufstrich-Syndikat“ angemeldet, wo verschiedene Freiburger WGs vegane Brotaufstriche selber machen und unter einander austauschen. Und Lui wird ab 2021 die Öffentlichkeits-AG unterstützen, das heißt von der werdet Ihr in Zukunft vermutlich noch häufiger was hören.</p>
+<div class="sekundaerbacki">
+<p></br> Aber nicht nur bei uns im Hausprojekt gibt es Veränderung, auch in Freiburg selbst tut sich etwas: Gerade während der Pandemie-Zeit entstehen auch einige neue sympathische Hausprojekte, denen wir viel Erfolg auf ihrem Weg wünschen. Wenn jemand von euch Interesse hat, weitere Hausprojekte in Freiburg zu unterstützen oder sich einfach informieren will, hier findet ihr weitere Infos:<br />
+ma per tutti – Landnahme an der Oase (<a href="https://mapertutti.org/" class="uri">https://mapertutti.org/</a>)<br />
+Stühlinger27 – Mieter_innen-Initiative im Mietshäuser Syndikat (<a href="https://stuehlinger27.org/" class="uri">https://stuehlinger27.org/</a>)<br />
+k.neun - Wohnprojekt Freiburg (<a href="https://kneun.org/" class="uri">https://kneun.org/</a>)</p>
+<div class="columns">
+<div class="column" style="width:15%;">
+
+</div><div class="column" style="width:70%;">
+<figure>
+<img src="zoom%20plenum.png">
+<figcaption class="caption">
+Während der Covid-Pandemie hielten wir das ein oder andere Plenum hybrid ab.
+</figcaption>
+</figure>
+</div><div class="column" style="width:15%;">
+
+</div>
+</div>
+<p></br></p>
+</div>
+<p>Nun gegen Jahresende haben wir passend zur besinnlichen Weihnachtszeit auch noch ein paar spaßige Aktivitäten vor uns, die auf uns warten: 1. unsere erste Steuererklärung schreiben und 2. die Zinsen für die Direktkredite berechnen, überweisen und Eure Kontoauszüge anzufertigen und versenden.</p>
+<p>Naja, ein Hausprojekt ist dann eben doch nicht nur Irokesen und Dosenbier, sondern auch Excelltabellen und Buchhaltung.</p>
+<p>So viel zu uns. Wir wünschen Euch allen schöne Weihnachtstage im kleinen Kreis und einen guten Start ins Neue Jahr. Wir hoffen, dass ihr alle gesund bleibt und dass all die schönen Treffen und Feten, die geplant waren, so bald wie möglich nachgeholt werden können.</p>
+<p>Danke noch einmal für euer Interesse und eure Unterstützung! Wir sind gespannt, was 2021 für uns alle bereit hält.</p>
+<p>Beste Grüße, Elias im Namen der Freiau99</p>
+</div>
+</details>
+<p></br></p>
+<details>
+<summary>
+<h3 {style="color:#FCF45D"}>
+
+Juli 2020
+
+</h3>
+</summary>
+<div>
+<p>Liebe Freund:Innen, Unterstützer:Innen und Interessierte,</p>
+<p>es ist wieder soweit - der nächste Newsletter aus der Freiau99 hat seinen Weg in euer Mailpostfach gefunden.<br />
+Wir sind inzwischen schon fast drei Monate stolze Bewohner:Innen der nun selbstverwalteten Freiau99. Und was sollen wir sagen - es fühlt sich eigentlich gar nicht so anders an.</p>
+<p>An das Plenieren haben wir uns inzwischen schon so sehr gewöhnt, dass es nicht mehr wegzudenken ist - es ist aber auch insofern etwas entspannter geworden, als dass es meistens weniger zu besprechen gibt und nur noch zweiwöchentlich stattfindet.</p>
+<p>Natürlich tragen wir jetzt alle mehr Verantwortung als zuvor: Ob es nun darum geht, eine:N Techniker:In zu rufen, weil das Heißwasser nicht läuft, die Direktkredite zu verwalten oder über die Infomail erreichbar zu sein - all das gehört zu unseren neuen Aufgaben, die mit dem selbstverwalteten Wohnen einhergehen.<br />
+Um ihnen gerecht zu werden, haben wir uns in einem Sonderplenum zusammengesetzt, und verschiedene AGs gegründet, um die Aufgaben und Zuständigkeiten unter uns aufzuteilen:<br />
+So gibt es nun eine Hausmeister:Innen-AG, eine Finanz-AG, eine Buchhaltungs-AG, eine Direktkreditverwaltungs-AG und eine Öffentlichkeitsarbeits-AG.</p>
+<p>Gerade haben vor allem Steffi und Jannis, die zusammen unsere Buchhaltung-AG bilden, erfahren, wieviel Arbeitsaufwand das mitunter bedeuten kann:<br />
+Drei Tage am Stück wurden sie von morgens bis spätnachmittags von Achim in die Kunst der Buchhaltung eingeführt - weitere Termine folgen!<br />
+Wir anderen haben nur die Köpfe durch die Küchentür rauchen hören - und wenn wir kurz von Unmut ergriffen wurden, weil wir für unseren Kaffee am Vormittag extra in die obere Küche hochstapfen mussten, so waren wir doch insgeheim froh, dass wir uns nicht selbst in dieses Hexenwerk einarbeiten müssen - an dieser Stelle ein großes Shout-Out an Jannis, Steffi und Achim - dafür, dass ihr euch bereit erklärt habt, diesen wichtigen Job zu übernehmen und dir Achim dafür, dass du die Zeit und Geduld aufbringst, den beiden dein Wissen weiterzuvermitteln!</p>
+<p>Ansonsten hat der Frühling uns viel Zeit in unserem schönen Garten gebracht - ob Kaffee am Morgen, Lernen im Grün, Gärtnern oder in der Hängematte fläzen - wir genießen unseren Mini-Naturspot im sonst so lärmenden Straßendjungel!</p>
+<div class="sekundaerbacki">
+<p></br> Abschließend wollen wir euch noch erzählen, was uns Covid-19 gebracht hat. Und zwar an Positivem, denn Negatives hört mensch ja schon genug - hier also eine kleine Sammlung:</p>
+<ul>
+<li><p>unzählige Doppelkopf-Abende (Für einen Teil von uns. Statistisch signifikanter Anstieg von 1/10 Bewohner:Innen, die die Spielregeln kennen auf 5/10!)</p></li>
+<li><p>einen neuen Gartenzaun</p></li>
+<li><p>abrasierte Augenbrauen</p></li>
+<li><p>eine Testphase mit der App Solid zum Aufteilen von WG-Kosten, und die Entscheidung, sie wieder abzuschaffen</p></li>
+<li><p>Koch-Experimente mit Tajine (Tajine auf dem Feuer, Tajine auf dem Ofen, süße Tajine, nicht süße Tajine, …)</p></li>
+</ul>
+<img src="archiv-2020_files/figure-html/unnamed-chunk-2-1.png" width="70%" height="40%" style="display: block; margin: auto;" />
+<figcaption class="caption">
+Die gestrichelte, vertikale Linie zeigt den Juli 2020 an. Da die Grafik 2025 erstellt wurde, entspricht der Fortlauf des Graphen der Realität. Wenn Ihr den Code zu dieser wahnsinnig anspruchsvollen Grafik benötigt, fragt Mare, dieses Statistik-&amp; -Programmier-Genie, was nicht nur die Grafik, sondern auch die gesamte Website programmiert hat.
+</figcaption>
+<p></br></p>
+</div>
+<p>Wir hoffen, euch mit diesem kleinen Einblick ein bisschen an den Entwicklungen unseres Projekts und unserem Zusammenleben teilhaben lassen zu können, und wünschen euch einen grandiosen Start in die Sommermonate!</p>
+<p>Liebste Grüße,</p>
+<p>eure Freiau99er:Innen!</p>
+</div>
+</details>
+<p></br></p>
+<details>
+<summary>
+<h3 {style="color:#FCF45D"}>
+
+April 2020
+
+</h3>
+</summary>
+<p>Liebe Freund:Innen, Unterstützer:Innen, Direktkreditgeber:Innen und Interessierte,</p>
+<p>hiermit erreicht euch der April-Newsletter der Freiau 99, den wir mit einer guten Nachricht beginnen wollen:</p>
+<p>Der Hauskauf ist so gut wie abgeschlossen, der Kaufvertrag ist unterschrieben, die Direktkredite sind auf unser Konto eingegangen und die Bankverhandlungen sind abgeschlossen. Wir warten nur noch darauf, dass die Kaufsumme überwiesen wird. Die Freiau 99 gehört dann also bald offiziell sich selbst, ist dem Markt entzogen und wir sind dann endlich unsere eigenen Vermieter:Innen - auch Dank eurer Hilfe.</p>
+<p>Ein letzter Stein auf unserem Weg erreichte uns völlig überraschend Anfang März: In den Plänen der Stadt sind die Freiauhäuser auf unserer Straßenseite seit den 70ern als Gewerbegebiet ausgeschreiben, nicht als Wohnflächen. Dementsprechend stand plötzlich doch noch unser Bankkredit auf der Kippe. Auf einmal waren wir mit fehlenden Dokumenten konfrontiert, die unter den Bomben des zweiten Weltkriegs begraben wurden, und Stadtratsbeschlüssen in altdeutscher Handschrift.</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Vor allem durch den vollen Einsatz unser Berater:Innen (danke Wolfgang, Thomas und Helma!) ist dieser letzte Stein aber aus dem Weg geräumt und der Bankvertrag konnte noch rechtzeitig unterschrieben werden.<br />
+So langsam tritt unser Hausprojekt damit in eine neue Phase ein - die Plena werden wieder kürzer, die Arbeit erstmal weniger, nun geht es darum, eine langfristige Struktur zu schaffen.</p>
+<p>Ein allerletzter Schritt zum offiziellen Mietshäusersyndikatsprojekt fehlt allerdings noch. Er hätte am 28. März stattfinden sollen. Auf der regionalen Mitgliederversammlung des Syndikats hätte entschieden werden sollen, dass sich das Mietshäusersyndikat in unsere GmbH einkauft.</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:35%;">
+<figure>
+<img src="sektfru%CC%88hstu%CC%88ck2020.jpg">
+<figcaption class="caption">
+Der anstehende Hauskauf wird mit Sektfrühstück zelebriert und auf unsere Beratis angestoßen :-)
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Dort hätten wir uns gemeinsam vorgestellt und Fragen beantwortet. Aufgrund der Corona-Krise wurde der Termin dann verschoben.</p>
+<p>Nichts desto trotz stehen wir nun als (fast) fertiges Hausprojekt in den Startlöchern - und können unsere ersten Erfahrungen schon mit neu entstehenden Projekten teilen. Gerade in den letzten Wochen ist vielen von uns noch einmal klar geworden, wie anders unser Leben jetzt aussehen könnte, wäre die Freiau 99 in die “falschen Hände” gefallen - eine Ausgangssperre in einer Gemeinschaft aus vielen Menschen, in einem Haus, mit dem man in Verbindung steht, ist doch etwas ganz anderes als die völlige Isolation, mit der viele andere Menschen jetzt klarkommen müssen.<br />
+Viel der gewonnenen Zeit fließt jetzt direkt in unser Haus - in den letzten Wochen haben wir den Garten komplett umgekrempelt, Pallettenbänke und einen Zaun gebaut, eine Feuerstelle eingerichtet, Blumen und Gemüse gepflanzt.</p>
+<p>Unser (vorerst) letztes Privatkonzert fand übrigens am ersten März statt - wir konnten uns über spanischen und französischen Trap in der 99 freuen.</p>
+<p>Den Umständen entsprechend wünschen wir euch allen Gesundheit, Solidarität und einen schönen Frühling - und hoffen, dass sich die Idee weiterverbreitet :)</p>
+<p>Liebe Grüße von der Freiau 99</p>
+<p>(Jannis, Frans, Viki, Raoul, Elias, Chris, Ludwig, Ines, Laura, Steffi und Mare)</p>
+</details>
+<p></br></p>
+<details>
+<summary>
+<h3 {style="color:#FCF45D"}>
+
+Februar 2020
+
+</h3>
+</summary>
+<p>Liebe Unterstützer:Innen und Interessierte,</p>
+<p>hiermit erreicht euch der zweite Newsletter aus der Freiau99, mit dem wir euch über unser buntes Treiben auf den neuesten Stand bringen möchten. Wir befinden uns gerade auf der Zielgeraden, das heißt, wir sind motiviert dabei, Direktkreditverträge zu versenden und zu unterschreiben, die Bankverhandlungen abzuschließen und alles weitere zu tun, was zu so einem Hauskauf dazu gehört. Aber eins nach dem anderen:</p>
+<p>Falls ihr Anfang Januar unseren Artikel in der Badischen Zeitung gelesen habt (<a href="https://www.badische-zeitung.de/keine-spekulation-in-der-freiau-99--181020886.html9" class="uri">https://www.badische-zeitung.de/keine-spekulation-in-der-freiau-99--181020886.html9</a>), habt ihr euch sicherlich gefragt, was aus den, zu dem Zeitpunkt noch fehlenden, 100 000 Euro geworden ist…<br />
+Nun ja, wir waren seitdem fleißig weiter am Werbung machen und auch der Zeitungsartikel hat viel Wirkung gezeigt:<br />
+Kurzum, wir haben inzwischen die Zusagen für die kompletten 300 000 Euro Privatdarlehen! Jedoch können wir uns nicht auf den Zusagen ausruhen, denn damit kann man leider noch kein Haus kaufen.</p>
+<p>Da wir mittlerweile nicht mehr nur eine GmbH in Gründung, sondern ins Handelsregister eingetragen sind, können wir uns nun offiziell FREIAU99 GmbH nennen.<br />
+Dank dieser Eintragung konnten wir dann auch endlich die Direktkreditverträge fertig stellen und beginnen, diese an alle interessierten Direktkreditgeber*innen, welche uns mündlich schon ihre Unterstützung zugesagt hatten, zu versenden. Die ersten Verträge sind unterschrieben zurückgekommen und einige Beträge sind bereits auf das GmbH Konto eingegangen.<br />
+Und es gibt noch eine weitere gute Nachricht: In nicht einmal zwei Wochen haben wir den Termin beim Notar, an dem unsere Geschäftsführung den Kaufvertrag unterschreiben wird!</p>
+<p>Es ist toll zu sehen, wie aus der Idee, das Haus zu kaufen und es zu einem Projekt des Mietshäusersyndikats zu machen, langsam etwas Greifbares wird.<br />
+Daher an dieser Stelle noch einmal ein riesengroßes Dankeschön an alle, die uns in Form eines Direktkredites unterstützen und all das ermöglichen!</p>
+<p>Liebe Grüße,</p>
+<p>die Freiau99<br />
+(Ines, Steffi, Marius, Elias, Viki, Laura, Frans, Jannis, Chris, Raoul, Ludwig)</p>
+</details>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

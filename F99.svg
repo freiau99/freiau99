@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486, 2022-12-01)"
+   sodipodi:docname="F99.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.47037037"
+     inkscape:cx="467.71654"
+     inkscape:cy="459.2126"
+     inkscape:window-width="1250"
+     inkscape:window-height="656"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     inkscape:rotation="-90" />
+  <defs
+     id="defs2">
+    <rect
+       x="0"
+       y="6.3779528"
+       width="790.86614"
+       height="1111.8898"
+       id="rect236" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3020">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:1.51181;stroke-linecap:round;stroke-dasharray:none"
+         id="rect3022"
+         width="741.96851"
+         height="335.90552"
+         x="12.755904"
+         y="27.637793" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="matrix(0,0.44550715,-0.78524842,0,253.55619,-6.8306731)"
+       id="text234"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:333.333px;font-family:'Al Bayan';-inkscape-font-specification:'Al Bayan Bold';white-space:pre;shape-inside:url(#rect236);display:inline;fill:#000080;stroke:#000000;stroke-width:15.1181;stroke-linecap:round;stroke-dasharray:none"
+       clip-path="url(#clipPath3020)"><tspan
+         x="0"
+         y="310.48871"
+         id="tspan3199">F99</tspan></text>
+  </g>
+</svg>

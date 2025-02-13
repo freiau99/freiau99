@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>archiv-2023.knit</title>
+
+<script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+  <link rel="icon" type="image/png" href="F99.svg"/>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style1.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Freiau99</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Archiv
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="archiv-2024.html">2024</a>
+    </li>
+    <li>
+      <a href="archiv-2023.html">2023</a>
+    </li>
+    <li>
+      <a href="archiv-2022.html">2022</a>
+    </li>
+    <li>
+      <a href="archiv-2021.html">2021</a>
+    </li>
+    <li>
+      <a href="archiv-2020.html">2020</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="MHS.html">MHS</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Direktkredite
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Wie-finanzieren-wir-uns-.html">Wie finanzieren wir uns?</a>
+    </li>
+    <li>
+      <a href="Was-sind-Direktkredite-.html">Was sind Direktkredite?</a>
+    </li>
+    <li>
+      <a href="Kreditvertraege.html">Kreditverträge</a>
+    </li>
+    <li>
+      <a href="Wie-viel-Sicherheit-gibt-es-.html">Wie viel Sicherheit gibt es?</a>
+    </li>
+    <li>
+      <a href="Zinsmethode.html">Zinsmethode</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Kontakt.html">Kontakt</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Impressum &amp; Datenschutz
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Impressum.html">Impressum</a>
+    </li>
+    <li>
+      <a href="Datenschutz.html">Datenschutzerklärung</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<h2 {style="color:#FCF45D"}>
+
+Newsletter des Jahres 2023
+
+</h2>
+<p></br></p>
+<details>
+<summary>
+<h3 {style="color:#FCF45D"}>
+
+Juli 2023
+
+</h3>
+</summary>
+<div>
+<p>Liebe Lesende, </br></br> <em>Erstmal zu uns &amp; dem, was bisher geschah:</em></br></br></p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Der Kater liegt auf dem Sofa und schnurrt. In Entspannung senkt und hebt sich sein Brustkorb, alle viere von sich gestreckt. Ohne es zu wissen, beschreibt er unsere Situation im Haus damit sehr gut. Es ist tiefer Sommer, die Temperaturen klettern und klettern und versetzen das Treiben hier in ein entspanntes, entschleunigtes Schnurren.</p>
+<p>Gut aufeinander eingespielt haben wir uns, jeder mit einem Fuß im Haus und mit einem in seinem Kram. Nur der Can, wo der gerade seine Füße drin stecken hat, weiß niemand so genau. Can hat vor ein paar Monaten seine Sachen gepackt, Marvin seinen Hausschlüssel überreicht und sich für ein Jahr in die Welt verabschiedet, in die Ganze, und wo auch immer er gerade ist, seine Füße stecken bestimmt in was sehr Abenteuerlichem. Und neben Marvin begrüßen wir auch Daniel in unserer wortwörtlichen „Mitte", eingezogen in das ehemalige Zimmer von Chris. Schön, die Beiden hier zu haben.</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:50%;">
+<figure>
+<img src="arschi-flohmi.jpeg"/>
+<figcaption class="caption">
+Hier haben wir den Flyer zu einem veranstalteten Flohmarkt, auf dem Ihr auch den genannten Kater in all seiner überdimensionalen Größe und Pracht bestaunen könnt.
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Was auch ein immer schleichender Prozess ist, ist die Erkenntnis der Aufmerksamkeitsbedürftigkeit eines selbstverwalteten Hauses. Instandhaltung braucht Zeit, Wissen und Aufmerksamkeit. Auch wir müssen hier noch vieles lernen und lernen aber auch stetig dazu, was man unschwer am Prozess unserer Dusche erkennen kann. Wir freuen uns nun mit der Sanierung des Holzfundaments endlich, dass der Neubau der Dusche beginnt.</p>
+<p><em>So viel dazu :-)</em> </br></br></p>
+<div class="sekundaerbacki">
+<p></br></p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<figure>
+<img src="f99-pass-auf.jpeg"/>
+<figcaption class="caption">
+Hier haben wir den Flyer zur rechts genannten Filmvorführung.
+</figcaption>
+</figure>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:65%;">
+<p>Ansonsten ist hier einiges passiert das Frühjahr über.</p>
+<p>Kurz ein paar Worte zu einem Dokumentationsabend, welcher in den Frühjahrsmonaten organisiert wurde. Die Geschichten von der Vergangenheit der Freiau haben uns immer mal wieder beschäftigt. Ungefähr waren uns die Besetzungen damals bekannt, und gepaart mit großem Interesse an der generellen Besetzungsgeschichte Freiburgs haben wir uns schließlich dran gemacht, unser Halbwissen zu vervollständigen. Im Rahmen dieser Veranstaltung haben wir den Film „Pass bloss auf!" der von der Medienwerkstatt von 1982 zeigt, der die Lebensrealität der Hausbesetzer_innen in Freiburg von innen heraus spielerisch präsentiert.</p>
+</div>
+</div>
+<p>Wir haben dazu filmschaffende Personen von der Medienwerkstatt und einige Zeitzeugen der Hausbesetzungen der 80er eingeladen, darunter auch jemand, der in der Besetzung der Freiau dabei war, um sich in einer gemeinsamen Runde danach über die Zeit auszutauschen. Aus dem Archiv für Soziale Bewegungen haben wir Bild-, Video-und Flyermaterial organisiert und eine kleine Ausstellung damit installiert. </br> Dem Keller mussten wir da gar nicht so viel abverlangen, gewohnt war er schon daran als Ausstrahlungsort zu dienen, von einer Premiere eines Skatefilms, welcher ein paar Monate zuvor gezeigt wurde. Beide Male hat er enormen Ansturm genossen, war prall voll und hat in seinem betonierten Kleid gestrahlt. Ansonsten ist unsere Zeit gespickt von kleineren Veranstaltungen, wie Flohmärkten und der ein oder anderen musikalischen Situation im Keller. </br></br></p>
+</div>
+<p></br> <em>Was um das Haus passiert…</em></br></br> Wir möchten außerdem nochmal kurz auf einen aktuellen kommunalpolitischen Prozess hier eingehen, welchen wir mit einigem Unbehagen beobachten: </br> Wie Ihr bestimmt mitbekommen habt, sind in den gesamten Freiburger Parkanlagen (ausgenommen der Eschholzpark und das Sternenwaldeck) laute Musik, ob durch Musikinstrumente oder Bluetooth-Lautsprecher produziert, von 23-6 Uhr verboten. </br> Es ist ein kontroverses Thema:</br> Natürlich verstehen wir die Notwendigkeit eines gemeinschaftlichen Umgangs in Toleranz, wir verstehen, dass Lärm sehr belastend ist und man in Städten sehr eng nebeneinander koexistieren muss. Dennoch fragen wir uns, ob das fast generelle und pauschale Musikverbot nach 23 Uhr nicht zu kurz und einseitig gedacht ist. Parks gehören zu einer der wenigen kostenfreien und konsumzwangbefreiten Freiräume der Stadt. </br> Dabei ist es wichtig sich zu fragen, von wem dieser öffentliche Raum genutzt wird, welche alternativen Möglichkeiten der Verwirklichung für die Menschen existieren und aus welcher Position wir Stellung zu einem solchen Verbot beziehen. Welche Notwendigkeit spielen kostenfreie Räume in unserem eigenen Leben? Bedeutet kollektives und solidarisches Miteinander nicht gerade auch dafür Sorge zu tragen, Räume der Verwirklichung für jede gesellschaftliche Gruppe zu schaffen, gerade wenn „kostenfrei" eine größere Rolle spielt oder diese zumindest in Prozesse der Entscheidungsfindung miteinzubeziehen? Denn öffentlicher Raum hat eine lange Historie, in dem er sowohl als Ressource der Selbstbehauptung und Sichtbarwerdung aber auch als Instrument für Verdrängung für städtische Akteure dienen kann.</br></br> Nutzungskonflikte werden immer wieder zu Ungunsten der Meinungen und Bedürfnisse junger oder marginalisierter Menschen entschieden. Es verweist auf das große Problem der gesellschaftlich diversen Repräsentanz bei der Entscheidungsfindung kommunalpolitischer Problemstellen. Die Mehrheit im Gemeinderat stimmte dafür, wer jedoch fast nicht dabei vertreten war, waren die wirklichen Parknutzer:Innen (nach 23 Uhr). Es geht bei der Fähigkeit, sich im öffentlichen Raum Gehör zu verschaffen, auf tieferer Ebene vor allem auch um Entscheidungen darüber, wer Teil der städtischen Gemeinschaft ist und die Mündigkeit besitzt, diese mitzugestalten.</br> Die Fragen, die bleiben: Welche kostenfreien und konsumzwangsbefreiten Orte können in Freiburg noch aufgesucht werden? Und ist Repression wirklich der beste Weg oder bieten alternative Handlungsmethoden wie Mediation nicht de-eskalierenderes Potential?</br> Wir wissen, dass dem zugrunde ein komplexer Konflikt liegt, den wir hier nur kurz angeschnitten haben und wollen betonen, dass wir das Bedürfnis nach Ruhe verstehen, dennoch diese Impulse kurz anstoßen. </br></br> Einen schönen Sommer Euch allen und bis bald! </br> Eure Freiau 99</p>
+</div>
+</details>
+<p></br></p>
+<details>
+<summary>
+<h3 {style="color:#FCF45D"}>
+
+Jahreswechsel 2022/2023
+
+</h3>
+</summary>
+<div>
+<p>Liebe alle, </br></br> So, das Jahr 2022 ist nun offiziell vorbei. Und klar, wir könnten das Jahr auch einfach mal in der Mitte des Jahres rekapitulieren, nach dem Nouruz zum Beispiel, dem Neujahrs- und Frühlingsfestes des persischen Kulturraumes im Mai nach, aber am passendsten ist hierfür doch einfach nach wie vor Silvester. Also heißt es nun, an einem so grau regnerischen Tag, nach sich legender Neujahrsaufregung nun: Beine hochlegen für die kleine aber feine best of Freiau 2022 Rekapitulation. </br></br> Da der letzte Newsletter gar nicht so lang her ist und der Zimmerwechsel-Wirbelsturm dort in all seiner charmanten Pracht bereits hinreichend beschrieben wurde, widmet sich dieser kleine Zwischeninput vor allem einem Kulturspecial. Wir wollen zeigen, was wir letztes Jahr selbst alles ermöglichen konnten und worauf wir stolz sind. Durch unsere Kulturveranstaltungen, welche in größeren Abständen im Keller stattfinden, schaffen wir einen Raum für junge Musiker:Innen, ihre Kunst an größeres Publikum zu tragen. Dabei bewegen wir uns in Spektren von lautem Punk über trommelnde Bässe bis hin zu Gesang mit Synthesizern aus Schweden und mehr. </br></br> Die daraus entstandenen Einnahmen gingen teils natürlich an die Künstler:Innen selber, aber es konnten vor allem auch Spenden an die ukrainische Organisation (deutsch-ukrainische-Gesellschaft Freiburg), die künstlerische Plattform Delphi-Space/GVBK (welche in Freiburg regionalen und überregionalen Künstler:Innen Raum für die Ausstellung künstlerischer Positionen zu aktuell gesellschaftlichen Positionen ermöglicht) und die solidarische Unterstützung von Freund:Innen in schwierigen Situationen generiert werden. </br></br> So, und wie man das nach einem so gelungenen Silvester so macht, hoffen wir, dass die gemilderten Temperaturen zumindest zu einem reibungslosen Rutsch verholfen haben. </br> Durch mitternächtliches sich-gegenseitig-in-den-Armen-liegen in der Silvesternacht haben wir durch gemeinsam gestärkte Standfestigkeit jedenfalls ein einwandfreies und kuschliges Rutschen erlebt. </br></br> Bis bald wieder &amp; ein gutes neues Jahr, </br> wünscht die Freiau99 :-)</p>
+</div>
+</details>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

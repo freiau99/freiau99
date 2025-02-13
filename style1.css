@@ -1,0 +1,366 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  font-family: "Poppins", serif;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box 
+}
+
+body{
+  background-color: #0D1B2A;
+  color: #E0E1DD;
+  margin-left: 0px;
+  border-left-width: 0px;
+  padding-left: 0px;
+}
+
+main {
+  width: 100%; /* Der Content nimmt den Rest des Platzes */
+}
+
+/*Adding a logo*/
+
+#TOC::before {
+  width: 250px !important;
+  content: "";
+  display: block;
+  height: 150px;
+  border: solid #415A77 10px;
+  background-image: url("Eumel-crop.jpg");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #415A77;
+  
+}
+
+/*TOC specifications*/
+
+.tocify {
+  width: 250px !important;
+  border: none;
+  margin-right: 0px;
+}
+
+  /* TOC links */
+
+.list-group-item {
+    color: #FFFFFF !important;
+    background-color: #415A77;
+    font-size: 14px;
+}
+
+.list-group-item.active {
+    color: #FFFFFF;
+    background-color: #1B263B;
+    border: none;
+}
+
+.list-group-item:hover, 
+.list-group-item.active:hover {
+    color: #FFFFFF;
+    background-color: #0D1B2A;
+}
+
+/*----------------NAVBAR ---------------*/
+
+.navbar-default {
+    background-color: #415A77f2;
+    box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.5);
+}
+
+.navbar-default, 
+.navbar-default * {
+    color: #FFFFFF !important;
+}
+
+.navbar-nav {
+  background-color: #415A77f2;
+}
+
+.navbar-default .navbar-nav>.open>a, 
+.navbar-default .navbar-nav>.active>a, 
+a.dropdown-toggle:hover {
+  background-color: #1B263Bf2 !important;
+  color: #FFFFFF;
+}
+
+/* Dropdown menu color */
+.navbar-default .dropdown-menu {
+  background-color: #415A77f2;
+  color: #FFFFFF;
+}
+
+/* Dropdown menu hover color */
+  .navbar-default .dropdown-menu>li>a:hover {
+    background-color: #1B263Bf2;
+    color: #FFFFFF;
+  }
+
+/* Navbar Links when hovered*/
+.navbar-default .dropdown-menu>.active>a
+.navbar-default .navbar-nav>.active>a:hover, 
+.navbar-default .navbar-nav:hover, 
+.navbar-default .navbar-nav>li>a:hover, 
+a.navbar-brand:hover {
+  color: #FFFFFF !important;
+  background-color: #1B263B;
+}
+
+/* links */
+a { 
+  color: #FCF45D;
+}
+
+a:hover {
+ color: #F29030; /* darker color when hovering */
+}
+
+.caption a{
+  color: #FCF45D;
+}
+
+.caption a:hover {
+  color: #F29030;
+}
+
+
+/* -----------HERO IMAGE AT TOP OF PAGE -----------*/
+
+/* LARGE HERO IMAGE AT TOP OF PAGE*/
+
+.hero-image {
+    position: relative;
+    margin-bottom: 2em;
+    /* liner gradient tints the image darker for readability*/
+    background-image: linear-gradient( rgba(0,0,0,.2), rgba(0,0,0,.2) ), url("haus-von-hinten.png"); 
+    height: 400px;
+    background-size: cover;
+    background-color: #141c25f2;
+    background-position: center center;
+    display: flex; /* Change to `display: none` for no hero image */
+    justify-content: center;
+    align-items: center;
+}
+
+.top-text {
+  position: relative;
+  letter-spacing: 0.065em;
+  line-height: 1em;
+  font-size: 68px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block; /* Change to `display: none` for no top text */
+  color: #ffffff;
+  margin-bottom: 2.5rem;
+  font-weight: bold;
+}
+
+.bottom-text {
+  position: relative;
+  font-size: 34px;
+  padding-bottom: 0.5em
+  text-transform: uppercase;
+  text-align: center;
+  display: block; /* Change to `display: none` for no bottom text */
+  font-weight: 300;
+  color: #ffffff90;
+}
+
+
+/* NO TOC on mobile */
+@media screen and (max-width: 767px){
+
+  .col-xs-12.col-sm-4.col-md-3 {
+    display: none;
+  }
+  
+  .top-text {
+    font-size: 25px;
+  }
+
+  .bottom-text {
+    font-size: 40px;
+  }
+  
+}
+
+/* -----------HEADERS -----------*/
+
+ h1, h2, h3 {
+    color: #FCF45D; /* Gelbe Schriftfarbe */
+    text-align: center; /* Zentrierte Ausrichtung */
+  }
+
+  details summary h3 {
+    display: inline-block; /* Verhindert Layout-Probleme */
+    width: 100%; /* Stellt sicher, dass h3 innerhalb von summary zentriert bleibt */
+    text-align: center;
+  }
+
+h1 {
+  font-size: 26px;
+  color:  #FCF45D;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.h1right {
+  font-size: 26px;
+  color:  #FCF45D;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 24px;
+  color: #FCF45D;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.h2right {
+  font-size: 24px;
+  color: #FCF45D;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 22px;
+  color: #FCF45D;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.h3right {
+  font-size: 22px;
+  color: #FCF45D;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+/* -----------PARAGRAPHS -----------*/
+
+
+p {
+  font-size: 16px;
+  color: #E0E1DD;
+}
+
+/* -----------CAPTIONS -----------*/
+
+.caption{
+  font-size: 14px !important;
+  font-style: italic !important;
+  color: #FCF45D !important;
+  text-align: center !important; 
+}
+
+/* -----------SECUNDARY BACKGROUND COLORS -----------*/
+.transparentbackground{
+  background-color: #ffffff;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+}
+
+.sekundaerbacki {
+  color: #E0E1DD;
+  background-color: #1B263B;
+  position: relative;
+  padding = 100px;
+}
+.sekundaerbacki:before {
+    content:"";
+    background-color:#1B263B;
+    position: absolute;
+    height: 100%;
+    width: 3000px;
+    left: -2000px;
+    z-index: -1;
+    padding = 100px
+}
+
+.whitebackground {
+  font-size: 19px;
+  color: #891b1b;
+  background-color: #ffffff;
+  position: relative;
+}
+.whitebackground:before {
+    content:"";
+    background-color:#ffffff;
+    position: absolute;
+    height: 100%;
+    width: 4000px;
+    left: -2000px;
+    z-index: -1;
+}
+
+/* -----------SLICKER SETTINGS -----------*/
+
+.slick-slide {
+  background-color: transparent;
+}
+
+.slick-dots li button:before {
+    color: #E0E1DD !important; /* Ändere 'yellow' auf deine gewünschte Farbe */
+    opacity: 1 !important; /* Stellt sicher, dass die Farbe sichtbar ist */
+}
+
+.slick-dots li.slick-active button:before {
+    color: #FCF45D !important; /* Farbe des aktiven Punkts */
+}
+
+
+details summary { 
+  cursor: pointer;
+}
+
+details summary > * {
+  display: inline;
+}
+
+details > summary:first-of-type {
+    list-style-type: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary h3 {
+    display: inline-block; /* Verhindert Layout-Probleme */
+    width: 100%; /* Stellt sicher, dass h3 innerhalb von summary zentriert bleibt */
+    text-align: center;
+    color: #FCF45D;
+  }
+
+img {
+  max-width = 100%
+}
+
+header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    background-color: #415A77f2 !important;
+    color: #FFFFFF !important;
+    color: white;
+    padding: 5px 15px 0px 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
