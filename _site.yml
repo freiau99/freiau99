@@ -24,12 +24,12 @@ navbar:
           href: Wie-finanzieren-wir-uns.html
         - text: "Was sind Direktkredite?"
           href: Was-sind-Direktkredite.html
-        - text: "Kreditverträge"
-          href: Kreditvertraege.html
         - text: "Wie viel Sicherheit gibt es?"
           href: Wie-viel-Sicherheit-gibt-es.html
         - text: "Zinsmethode"
           href: Zinsmethode.html
+        - text: "Kreditverträge"
+          href: Kreditvertraege.html
     - text: "Kontakt"
       href: Kontakt.html
   right: 
