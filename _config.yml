@@ -6,6 +6,8 @@ navbar:
       href: index.html
     - text: "Archiv"
       menu:
+        - text: "2025"
+          href: archiv-2025.html
         - text: "2024"
           href: archiv-2024.html
         - text: "2023"
