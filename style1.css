@@ -21,6 +21,9 @@ body{
   padding-left: 0px;
 }
 
+#header{
+  display: none;
+}
 
 /*Adding a logo*/
 
