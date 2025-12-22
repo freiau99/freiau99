@@ -32,6 +32,8 @@ navbar:
           href: Zinsmethode.html
         - text: "Kreditverträge"
           href: Kreditvertraege.html
+    - text: "Merchandise"
+      href: Merchandise.html
     - text: "Kontakt"
       href: Kontakt.html
   right: 
