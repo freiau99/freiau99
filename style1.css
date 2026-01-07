@@ -119,7 +119,11 @@ a {
   color: #FCF45D;
 }
 
-a:hover {
+a:hover{
+ color: #F29030; /* darker color when hovering */
+}
+
+a:visited {
  color: #F29030; /* darker color when hovering */
 }
 
@@ -127,9 +131,15 @@ a:hover {
   color: #FCF45D;
 }
 
+
 .caption a:hover {
   color: #F29030;
 }
+
+.caption a:visited {
+  color: #F29030;
+}
+
 
 
 /* -----------HERO IMAGE AT TOP OF PAGE -----------*/
